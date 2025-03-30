@@ -15,3 +15,17 @@ print("Puncations removed String: ", no_pun_string)
 #Removing white spaces
 no_wspace_string = no_pun_string.strip()
 print(no_wspace_string)
+
+#remove stop words
+import nltk
+from nltk.corpus import stopwords
+stop_words = set(stopwords.words('english'))
+print(stop_words)
+list_string = no_wspace_string.split()
+print(list_string)
+no_stopword_string = ""
+for i in list_string:
+    if i not in stop_words:
+        no_stopword_string += i + " "
+
+print(no_stopword_string)
